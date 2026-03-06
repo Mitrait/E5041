@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E5041.pro — Защита персональных данных 152-ФЗ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js" defer></script>
+    <style>
+        @keyframes float3d { 0%,100% {transform:translateY(0) rotate3d(0,0,0,0deg);} 50% {transform:translateY(-8px) rotate3d(2,2,0,2deg);} }
+        .float-3d {animation:float3d 6s ease-in-out infinite;}
+        .card-hover {transition:all .4s cubic-bezier(0.4,0,0.2,1);}
+        .card-hover:hover {transform:translateY(-12px) rotate3d(1,1,0,3deg); box-shadow:0 25px 50px -12px rgb(0 212 255 / 0.25);}
+        .btn-thin {border:1px solid rgba(255,255,255,0.2); opacity:0.8; transition:all .3s;}
+        .btn-thin:hover {opacity:1; box-shadow:0 0 20px #00D4FF;}
+    </style>
+</head>
+<body class="bg-[#0A0A0A] text-white min-h-screen flex flex-col" x-data="{ cookieConsent: localStorage.getItem('cookieConsentAccepted') === 'true' }" x-init="
+    if (!cookieConsent) {
+        // можно показать попап или что-то, но пока просто чекбокс в футере
+    }
+">
+    <nav class="fixed top-0 w-full bg-[#0A0A0A]/80 backdrop-blur-md z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="/" class="text-3xl font-thin tracking-widest">E5041.pro</a>
+            <div class="space-x-8">
+                <a href="/" class="hover:text-[#00D4FF]">Главная</a>
+                <a href="/services/" class="hover:text-[#00D4FF]">Услуги</a>
+                <a href="/docshel/" class="hover:text-[#00D4FF]">DocShell 4.0</a>
+                <a href="/about/" class="hover:text-[#00D4FF]">О эксперте</a>
+                <a href="/contacts/" class="hover:text-[#00D4FF]">Контакты</a>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <footer class="mt-auto py-16 border-t border-white/10 text-center text-sm relative" x-cloak>
+        © 2026 Попов Евгений Валерьевич. 
+        <a href="/politika/" class="text-[#00D4FF] hover:underline">Политика обработки ПДн</a>
+        <a href="/soglasie/" class="text-[#00D4FF] hover:underline ml-4">Согласие</a>
+        <a href="https://t.me/E5041_bot" class="text-[#00D4FF] hover:underline ml-4">Только @E5041_bot</a>
+
+        <!-- Cookie consent чекбокс — теперь рабочий -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center max-w-4xl px-4">
+            <label class="inline-flex items-start cursor-pointer group">
+                <input 
+                    type="checkbox" 
+                    x-model="cookieConsent" 
+                    @change="localStorage.setItem('cookieConsentAccepted', cookieConsent);"
+                    class="form-checkbox h-5 w-5 mt-1 accent-[#00D4FF] bg-white/20 border border-white/40 rounded checked:bg-[#00D4FF]/60 focus:ring-0 focus:ring-offset-0 cursor-pointer transition"
+                >
+                <span class="ml-3 text-sm text-white/90 group-hover:text-white transition leading-relaxed">
+                    Используя сайт, я подтверждаю своё согласие на обработку файлов cookies. Cookies используются для улучшения работы сайта, анализа трафика и персонализации контента в соответствии с нашей <a href="/politika/" class="text-[#00D4FF] underline hover:no-underline">политикой конфиденциальности</a>. 
+                    Предоставляя персональные данные через формы, я также выражаю согласие на их обработку в соответствии с 152-ФЗ.
+                </span>
+            </label>
+        </div>
+    </footer>
+
+    <script>AOS.init({once: true, duration: 800});</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿{% extends 'base.html' %}
+{% block content %}
+<div class="max-w-5xl mx-auto px-6 py-32 pt-48">
+    <h1 class="text-6xl md:text-8xl font-thin leading-tight tracking-tight text-center mb-16 float-3d">
+        Контакты
+    </h1>
+    <p class="text-xl text-center mb-12">Эксперт по 152-ФЗ: Евгений Попов</p>
+    <p class="text-xl text-center mb-12">Telegram-бот: @E5041_bot</p>
+    <p class="text-xl text-center mb-12">Телефон: +7 928 456 72 94</p>
+    <div class="max-w-md mx-auto">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="text-sm mt-4 opacity-80">
+                Предоставляя свои персональные данные (имя и номер телефона) через данную форму, я выражаю согласие на их обработку с целью осуществления обратной связи. Обработка данных осуществляется в соответствии с требованиями Федерального закона от 27.07.2006 № 152‑ФЗ «О персональных данных» и действует до момента отзыва согласия в письменной форме.
+                <br><br>
+                Используя сайт, я подтверждаю своё согласие на обработку файлов cookies. Cookies используются для улучшения работы сайта, анализа трафика и персонализации контента в соответствии с нашей <a href="/politika/" class="text-[#00D4FF] underline hover:no-underline">политикой конфиденциальности</a>.
+            </div>
+            <button type="submit" class="btn-thin w-full py-6 mt-8 text-xl rounded-[8px]">Отправить заявку в Телеграм бот</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
