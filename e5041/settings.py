@@ -8,7 +8,7 @@ environ.Env.read_env(BASE_DIR / '.env')
 
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = env.bool('DEBUG', True)
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '94.103.90.93', 'e5041.pro', 'www.e5041.pro', '*']  # фикс DisallowedHost
 
 INSTALLED_APPS = [
     'django.contrib.admin',

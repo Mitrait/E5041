@@ -20,15 +20,6 @@ def index(request):
             return redirect('index')
     return render(request, 'index.html', {'form': form})
 
-def services(request):
-    return render(request, 'services.html')
-
-def docshel(request):
-    return render(request, 'docshel.html')
-
-def about(request):
-    return render(request, 'about.html')
-
 def contacts(request):
     form = ContactForm()
     if request.method == 'POST':
@@ -38,3 +29,7 @@ def contacts(request):
             send_to_telegram(text)
             return redirect('contacts')
     return render(request, 'contacts.html', {'form': form})
+
+def services(request): return render(request, 'services.html')
+def docshel(request): return render(request, 'docshel.html')
+def about(request): return render(request, 'about.html')

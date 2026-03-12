@@ -4,19 +4,54 @@
     <h1 class="text-6xl md:text-8xl font-thin leading-tight tracking-tight text-center mb-16 float-3d">
         Контакты
     </h1>
-    <p class="text-xl text-center mb-12">Эксперт по 152-ФЗ: Евгений Попов</p>
-    <p class="text-xl text-center mb-12">Telegram-бот: @E5041_bot</p>
-    <p class="text-xl text-center mb-12">Телефон: +7 928 456 72 94</p>
-    <div class="max-w-md mx-auto">
-        <form method="post">
+
+    <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-20">
+        <div class="text-center">
+            <p class="text-2xl mb-4">Эксперт по 152-ФЗ</p>
+            <p class="text-xl text-[#00D4FF]">Попов Евгений Валерьевич</p>
+        </div>
+        <div class="text-center">
+            <p class="text-2xl mb-4">Связаться</p>
+            <a href="https://t.me/E5041_bot" class="text-2xl text-[#00D4FF] hover:underline">@E5041_bot</a>
+            <p class="text-xl mt-4">Телефон: +7 928 456 72 94</p>
+        </div>
+    </div>
+
+    <div class="max-w-lg mx-auto bg-[#111]/50 backdrop-blur-md border border-white/10 rounded-2xl p-10 shadow-2xl">
+        <form method="post" class="space-y-8">
             {% csrf_token %}
-            {{ form.as_p }}
-            <div class="text-sm mt-4 opacity-80">
-                Предоставляя свои персональные данные (имя и номер телефона) через данную форму, я выражаю согласие на их обработку с целью осуществления обратной связи. Обработка данных осуществляется в соответствии с требованиями Федерального закона от 27.07.2006 № 152‑ФЗ «О персональных данных» и действует до момента отзыва согласия в письменной форме.
-                <br><br>
-                Используя сайт, я подтверждаю своё согласие на обработку файлов cookies. Cookies используются для улучшения работы сайта, анализа трафика и персонализации контента в соответствии с нашей <a href="/politika/" class="text-[#00D4FF] underline hover:no-underline">политикой конфиденциальности</a>.
+
+            <div>
+                <label class="block text-lg mb-2">Имя</label>
+                {{ form.name }}
             </div>
-            <button type="submit" class="btn-thin w-full py-6 mt-8 text-xl rounded-[8px]">Отправить заявку в Телеграм бот</button>
+
+            <div>
+                <label class="block text-lg mb-2">Телефон</label>
+                {{ form.phone }}
+            </div>
+
+            <div>
+                <label class="block text-lg mb-2">Сообщение</label>
+                {{ form.message }}
+            </div>
+
+            <!-- Усиленный чекбокс -->
+            <div class="flex items-start gap-4 bg-[#0A0A0A]/50 p-6 rounded-xl border border-white/10">
+                <input type="checkbox" name="consent" id="consent" required class="w-6 h-6 accent-[#00D4FF] mt-1 flex-shrink-0">
+                <label for="consent" class="text-base text-gray-300 leading-relaxed cursor-pointer">
+                    Я даю согласие на обработку моих персональных данных (ФИО, телефон, IP-адрес) в целях предоставления консультаций и обратной связи. 
+                    Ознакомился(-ась) и согласен(-на) с 
+                    <a href="/politika/" class="text-[#00D4FF] hover:underline">Политикой обработки персональных данных</a> 
+                    и 
+                    <a href="/soglasie/" class="text-[#00D4FF] hover:underline">Согласием на обработку ПДн</a>. 
+                    <span class="text-red-400 font-medium">Чекбокс обязателен для отправки заявки.</span>
+                </label>
+            </div>
+
+            <button type="submit" class="btn-thin w-full py-6 text-xl rounded-[8px] mt-6">
+                Отправить заявку в @E5041_bot
+            </button>
         </form>
     </div>
 </div>

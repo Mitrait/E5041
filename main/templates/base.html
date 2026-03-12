@@ -17,11 +17,7 @@
         .btn-thin:hover {opacity:1; box-shadow:0 0 20px #00D4FF;}
     </style>
 </head>
-<body class="bg-[#0A0A0A] text-white min-h-screen flex flex-col" x-data="{ cookieConsent: localStorage.getItem('cookieConsentAccepted') === 'true' }" x-init="
-    if (!cookieConsent) {
-        // можно показать попап или что-то, но пока просто чекбокс в футере
-    }
-">
+<body class="bg-[#0A0A0A] text-white min-h-screen flex flex-col">
     <nav class="fixed top-0 w-full bg-[#0A0A0A]/80 backdrop-blur-md z-50">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <a href="/" class="text-3xl font-thin tracking-widest">E5041.pro</a>
@@ -35,30 +31,48 @@
         </div>
     </nav>
 
-    {% block content %}{% endblock %}
+    <main class="flex-grow pt-24">
+        {% block content %}{% endblock %}
+    </main>
 
-    <footer class="mt-auto py-16 border-t border-white/10 text-center text-sm relative" x-cloak>
-        © 2026 Попов Евгений Валерьевич. 
-        <a href="/politika/" class="text-[#00D4FF] hover:underline">Политика обработки ПДн</a>
-        <a href="/soglasie/" class="text-[#00D4FF] hover:underline ml-4">Согласие</a>
-        <a href="https://t.me/E5041_bot" class="text-[#00D4FF] hover:underline ml-4">Только @E5041_bot</a>
+    <!-- Cookie-баннер -->
+    <div id="cookie-banner" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#111]/95 backdrop-blur-lg border border-white/20 rounded-2xl px-8 py-6 max-w-xl w-11/12 shadow-2xl z-50 hidden">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <p class="text-sm text-gray-300 leading-relaxed">
+                Мы используем технические cookies для корректной работы сайта. Продолжая использовать сайт, вы соглашаетесь с 
+                <a href="/politika/" class="text-[#00D4FF] hover:underline">Политикой обработки персональных данных</a>.
+            </p>
+            <button id="accept-cookies" class="btn-thin px-10 py-4 text-base rounded-[8px] whitespace-nowrap">
+                Принять
+            </button>
+        </div>
+    </div>
 
-        <!-- Cookie consent чекбокс — теперь рабочий -->
-        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center max-w-4xl px-4">
-            <label class="inline-flex items-start cursor-pointer group">
-                <input 
-                    type="checkbox" 
-                    x-model="cookieConsent" 
-                    @change="localStorage.setItem('cookieConsentAccepted', cookieConsent);"
-                    class="form-checkbox h-5 w-5 mt-1 accent-[#00D4FF] bg-white/20 border border-white/40 rounded checked:bg-[#00D4FF]/60 focus:ring-0 focus:ring-offset-0 cursor-pointer transition"
-                >
-                <span class="ml-3 text-sm text-white/90 group-hover:text-white transition leading-relaxed">
-                    Используя сайт, я подтверждаю своё согласие на обработку файлов cookies. Cookies используются для улучшения работы сайта, анализа трафика и персонализации контента в соответствии с нашей <a href="/politika/" class="text-[#00D4FF] underline hover:no-underline">политикой конфиденциальности</a>. 
-                    Предоставляя персональные данные через формы, я также выражаю согласие на их обработку в соответствии с 152-ФЗ.
-                </span>
-            </label>
+    <footer class="py-20 border-t border-white/10 text-center text-base">
+        <p class="mb-6">© 2026 Попов Евгений Валерьевич. Все права защищены.</p>
+        <div class="flex flex-wrap justify-center gap-8 md:gap-12">
+            <a href="/politika/" class="text-[#00D4FF] hover:text-[#00D4FF]/80 transition-colors underline underline-offset-4 text-lg">
+                Политика обработки персональных данных
+            </a>
+            <a href="/soglasie/" class="text-[#00D4FF] hover:text-[#00D4FF]/80 transition-colors underline underline-offset-4 text-lg">
+                Согласие на обработку ПДн
+            </a>
+            <a href="https://t.me/E5041_bot" class="text-[#00D4FF] hover:text-[#00D4FF]/80 transition-colors underline underline-offset-4 text-lg">
+                Связаться только через @E5041_bot
+            </a>
         </div>
     </footer>
+
+    <!-- Cookie-скрипт -->
+    <script>
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookie-banner').classList.remove('hidden');
+        }
+        document.getElementById('accept-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').classList.add('hidden');
+        });
+    </script>
 
     <script>AOS.init({once: true, duration: 800});</script>
 </body>
