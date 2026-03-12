@@ -15,17 +15,18 @@
         .card-hover:hover {transform:translateY(-12px) rotate3d(1,1,0,3deg); box-shadow:0 25px 50px -12px rgb(0 212 255 / 0.25);}
         .btn-thin {border:1px solid rgba(255,255,255,0.2); opacity:0.8; transition:all .3s;}
         .btn-thin:hover {opacity:1; box-shadow:0 0 20px #00D4FF;}
+        .menu-item { white-space: nowrap; }
     </style>
 </head>
 <body class="bg-[#0A0A0A] text-white min-h-screen flex flex-col">
     <nav class="fixed top-0 w-full bg-[#0A0A0A]/80 backdrop-blur-md z-50">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <a href="/" class="text-3xl font-thin tracking-widest">E5041.pro</a>
-            <div class="space-x-8">
+            <div class="space-x-8 text-lg">
                 <a href="/" class="hover:text-[#00D4FF]">Главная</a>
                 <a href="/services/" class="hover:text-[#00D4FF]">Услуги</a>
                 <a href="/docshel/" class="hover:text-[#00D4FF]">DocShell 4.0</a>
-                <a href="/about/" class="hover:text-[#00D4FF]">О эксперте</a>
+                <a href="/about/" class="menu-item hover:text-[#00D4FF]">О эксперте</a>
                 <a href="/contacts/" class="hover:text-[#00D4FF]">Контакты</a>
             </div>
         </div>
@@ -51,19 +52,12 @@
     <footer class="py-20 border-t border-white/10 text-center text-base">
         <p class="mb-6">© 2026 Попов Евгений Валерьевич. Все права защищены.</p>
         <div class="flex flex-wrap justify-center gap-8 md:gap-12">
-            <a href="/politika/" class="text-[#00D4FF] hover:text-[#00D4FF]/80 transition-colors underline underline-offset-4 text-lg">
-                Политика обработки персональных данных
-            </a>
-            <a href="/soglasie/" class="text-[#00D4FF] hover:text-[#00D4FF]/80 transition-colors underline underline-offset-4 text-lg">
-                Согласие на обработку ПДн
-            </a>
-            <a href="https://t.me/E5041_bot" class="text-[#00D4FF] hover:text-[#00D4FF]/80 transition-colors underline underline-offset-4 text-lg">
-                Связаться только через @E5041_bot
-            </a>
+            <a href="/politika/" class="text-[#00D4FF] hover:text-[#00D4FF]/80 transition-colors underline underline-offset-4 text-lg">Политика обработки персональных данных</a>
+            <a href="/soglasie/" class="text-[#00D4FF] hover:text-[#00D4FF]/80 transition-colors underline underline-offset-4 text-lg">Согласие на обработку ПДн</a>
+            <a href="https://t.me/E5041_bot" class="text-[#00D4FF] hover:text-[#00D4FF]/80 transition-colors underline underline-offset-4 text-lg">Связаться только через @E5041_bot</a>
         </div>
     </footer>
 
-    <!-- Cookie-скрипт -->
     <script>
         if (!localStorage.getItem('cookiesAccepted')) {
             document.getElementById('cookie-banner').classList.remove('hidden');
