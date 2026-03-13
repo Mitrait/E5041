@@ -1,12 +1,38 @@
 ﻿{% extends 'base.html' %}
 {% block content %}
-<div class="max-w-5xl mx-auto px-6 py-32 pt-48">
-    <h1 class="text-6xl md:text-8xl font-thin leading-tight tracking-tight text-center mb-16 float-3d">
-        Услуги
-    </h1>
-    <p class="text-xl leading-relaxed mb-12">152-ФЗ (изменения 2026: ужесточение контроля Роскомнадзором, уведомления об инцидентах, шифрование, трансграничная передача, штрафы до 1,5 млн руб.).</p>
-    <p class="text-xl leading-relaxed mb-12">Категорирование КИИ (медорганизации — субъекты КИИ с 2025, новые типовые перечни, уровни I–III, обязательное российское ПО).</p>
-    <p class="text-xl leading-relaxed mb-12">Информационная безопасность частных клиник, санаториев и гостиниц с медуслугами (модель угроз, организационно-распорядительная документация, аудит).</p>
-    <!-- дополнительные объёмные блоки с SEO 450+ символов -->
+<div class="max-w-6xl mx-auto px-6 py-32">
+    <h1 class="text-6xl md:text-8xl font-thin text-center mb-16 float-3d">Услуги по защите персональных данных 152-ФЗ</h1>
+    <p class="text-xl md:text-2xl text-center mb-20 text-gray-300">Полный комплекс услуг по приведению организации в соответствие с требованиями Федерального закона № 152-ФЗ «О персональных данных», Федерального закона № 187-ФЗ и актуальным требованиям РКН 2026 года.</p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-24">
+        <div class="p-10 rounded-2xl bg-[#111]/80 backdrop-blur-lg border border-white/10 card-hover">
+            <h2 class="text-4xl font-light mb-6">Разработка документов по 152-ФЗ</h2>
+            <p class="text-lg text-gray-300 mb-6">Полный комплект локальных нормативных актов: политика обработки ПДн, положение о защите, приказы, инструкции, журналы учёта, уведомления, согласия субъектов, акты уничтожения и другие документы (более 60 позиций).</p>
+        </div>
+        <div class="p-10 rounded-2xl bg-[#111]/80 backdrop-blur-lg border border-white/10 card-hover">
+            <h2 class="text-4xl font-light mb-6">Категорирование КИИ</h2>
+            <p class="text-lg text-gray-300 mb-6">Определение категории значимости объектов КИИ медицинских организаций, разработка модели угроз, паспортов объектов, актов категорирования в соответствии с 187-ФЗ и приказами ФСТЭК.</p>
+        </div>
+        <div class="p-10 rounded-2xl bg-[#111]/80 backdrop-blur-lg border border-white/10 card-hover">
+            <h2 class="text-4xl font-light mb-6">Аудит информационной безопасности</h2>
+            <p class="text-lg text-gray-300 mb-6">Аудит информационных систем персональных данных (ИСПДн), проверка мер защиты, анализ уязвимостей, подготовка к проверкам ФСТЭК и Роскомнадзора.</p>
+        </div>
+        <div class="p-10 rounded-2xl bg-[#111]/80 backdrop-blur-lg border border-white/10 card-hover">
+            <h2 class="text-4xl font-light mb-6">Обучение сотрудников</h2>
+            <p class="text-lg text-gray-300 mb-6">Проведение обучения и инструктажей по защите персональных данных, подготовка материалов, тестирование знаний в соответствии с требованиями 152-ФЗ.</p>
+        </div>
+        <div class="p-10 rounded-2xl bg-[#111]/80 backdrop-blur-lg border border-white/10 card-hover">
+            <h2 class="text-4xl font-light mb-6">Сопровождение при проверках</h2>
+            <p class="text-lg text-gray-300 mb-6">Полное сопровождение проверок Роскомнадзора и ФСТЭК, подготовка возражений, представление интересов организации.</p>
+        </div>
+        <div class="p-10 rounded-2xl bg-[#111]/80 backdrop-blur-lg border border-white/10 card-hover">
+            <h2 class="text-4xl font-light mb-6">Консультации онлайн</h2>
+            <p class="text-lg text-gray-300 mb-6">Индивидуальные консультации по любым вопросам 152-ФЗ и 187-ФЗ через Telegram-бот @E5041_bot или по телефону.</p>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <a href="/contacts/" class="btn-thin px-12 py-6 text-2xl rounded-[12px]">Заказать услугу</a>
+    </div>
 </div>
 {% endblock %}

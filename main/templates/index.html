@@ -1,14 +1,60 @@
 ﻿{% extends 'base.html' %}
 {% block content %}
-<div class="max-w-6xl mx-auto px-6 py-32 pt-48">
-    <h1 class="text-6xl md:text-8xl font-thin leading-tight tracking-tight text-center mb-16 float-3d">
-        Попов Евгений Валерьевич
-    </h1>
-    <p class="text-3xl text-center mb-8">Эксперт по информационной безопасности для медицинских организаций</p>
-    <p class="text-xl text-center mb-16">Официальный представитель DocShell 4.0 в Сочи.</p>
-    <p class="text-xl text-center mb-16">Специализируюсь на: соблюдении требований 152‑ФЗ для клиник, санаториев и гостиниц; категорировании объектов критической информационной инфраструктуры (КИИ).</p>
+<div class="max-w-6xl mx-auto px-6 py-32">
+    <h1 class="text-6xl md:text-8xl font-thin leading-tight text-center mb-16 float-3d">Защита персональных данных 152-ФЗ</h1>
+    <p class="text-xl md:text-2xl text-center mb-20 text-gray-300">Эксперт по соблюдению требований Федерального закона № 152-ФЗ «О персональных данных», категорированию объектов критической информационной инфраструктуры (КИИ) и обеспечению информационной безопасности медицинских организаций. Консультации, аудит, обучение, разработка документов.</p>
+
+    <div class="grid md:grid-cols-2 gap-12 mb-24">
+        <div class="p-10 rounded-2xl bg-[#111]/80 backdrop-blur-lg border border-white/10 card-hover">
+            <h2 class="text-4xl font-light mb-6">Консультации по 152-ФЗ</h2>
+            <p class="text-lg text-gray-300 mb-6">Полное сопровождение организаций по вопросам обработки персональных данных: от разработки локальных актов до прохождения проверок Роскомнадзора. Разработка политики обработки ПДн, согласий, уведомлений, приказов, инструкций, журналов учёта и других документов (более 60 позиций).</p>
+            <a href="/contacts/" class="text-[#00D4FF] hover:underline">Получить консультацию →</a>
+        </div>
+        <div class="p-10 rounded-2xl bg-[#111]/80 backdrop-blur-lg border border-white/10 card-hover">
+            <h2 class="text-4xl font-light mb-6">Категорирование КИИ</h2>
+            <p class="text-lg text-gray-300 mb-6">Полное категорирование объектов критической информационной инфраструктуры медицинских организаций в соответствии с 187-ФЗ. Определение категории значимости, разработка модели угроз, актов категорирования, паспортов объектов КИИ.</p>
+            <a href="/services/" class="text-[#00D4FF] hover:underline">Подробнее об услуге →</a>
+        </div>
+    </div>
+
+    <div class="mb-24">
+        <h2 class="text-5xl font-light text-center mb-12">Почему выбирают E5041.pro</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 rounded-2xl bg-[#111]/80 backdrop-blur-lg border border-white/10 text-center card-hover">
+                <h3 class="text-3xl font-light mb-4">15+ лет опыта</h3>
+                <p class="text-gray-300">Глубокое знание 152-ФЗ, 187-ФЗ, приказов ФСТЭК №21, ФСБ №378 и актуальных требований РКН 2026 года.</p>
+            </div>
+            <div class="p-8 rounded-2xl bg-[#111]/80 backdrop-blur-lg border border-white/10 text-center card-hover">
+                <h3 class="text-3xl font-light mb-4">100% соответствие закону</h3>
+                <p class="text-gray-300">Разработка комплекта документов, внедрение мер защиты, подготовка к проверкам Роскомнадзора и ФСТЭК.</p>
+            </div>
+            <div class="p-8 rounded-2xl bg-[#111]/80 backdrop-blur-lg border border-white/10 text-center card-hover">
+                <h3 class="text-3xl font-light mb-4">Гарантия результата</h3>
+                <p class="text-gray-300">Полное сопровождение до получения положительного заключения. Работаем только по договору.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-24">
+        <h2 class="text-5xl font-light text-center mb-12">Часто задаваемые вопросы по 152-ФЗ в 2026 году</h2>
+        <div class="space-y-8">
+            <div>
+                <h3 class="text-3xl font-light mb-4">Какие документы нужны по 152-ФЗ в 2026 году?</h3>
+                <p class="text-gray-300">Оператор обязан разработать и утвердить политику обработки персональных данных, положение о защите ПДн, приказ о назначении ответственного, инструкции, журналы учёта, уведомление в Роскомнадзор, согласия субъектов, акты уничтожения и другие документы — всего более 60 позиций.</p>
+            </div>
+            <div>
+                <h3 class="text-3xl font-light mb-4">Что изменилось в требованиях к согласию с 2025 года?</h3>
+                <p class="text-gray-300">С 1 сентября 2025 года согласие на обработку ПДн должно быть отдельным документом, конкретным, информированным, с указанием целей, категорий данных, срока, способов обработки, права на отзыв и оператора (ст. 9 152-ФЗ в ред. 2025).</p>
+            </div>
+            <div>
+                <h3 class="text-3xl font-light mb-4">Нужно ли уведомлять Роскомнадзор?</h3>
+                <p class="text-gray-300">Да, все операторы персональных данных обязаны подать уведомление о начале обработки ПДн до начала обработки (ст. 22 152-ФЗ). Исключения минимальны и касаются только отдельных случаев.</p>
+            </div>
+        </div>
+    </div>
+
     <div class="text-center">
-        <a href="https://t.me/E5041_bot" class="btn-thin px-16 py-6 text-xl rounded-[8px] inline-block">Связаться через @E5041_bot</a>
+        <a href="/contacts/" class="btn-thin px-12 py-6 text-2xl rounded-[12px]">Получить консультацию по 152-ФЗ</a>
     </div>
 </div>
 {% endblock %}

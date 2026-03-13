@@ -3,3 +3,5 @@ django-environ==0.12.0
 whitenoise==6.9.0
 requests==2.32.3
 gunicorn==23.0.0
+# !!!!!ВАЖНО УЧТИ ПРИ СБОРКЕ - pydantic-core решён навсегда через PyO3 ABI3
+# библиотека видит Python 3.14 без recompilation — указать в requirements.txt и README

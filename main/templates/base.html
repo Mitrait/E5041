@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E5041.pro — Защита персональных данных 152-ФЗ Сочи</title>
+    <meta name="description" content="Эксперт по защите персональных данных 152-ФЗ, категорированию КИИ, информационной безопасности медицинских организаций. Консультации, аудит, обучение. Сочи.">
+    <meta name="keywords" content="152-ФЗ, защита персональных данных, ПДн, категорирование КИИ, информационная безопасность, медицина, Сочи, консультации 152-ФЗ">
+    <title>E5041.pro — Эксперт по защите персональных данных 152-ФЗ и КИИ</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js" defer></script>
     <style>
         @keyframes float3d { 0%,100% {transform:translateY(0) rotate3d(0,0,0,0deg);} 50% {transform:translateY(-8px) rotate3d(2,2,0,2deg);} }
         .float-3d {animation:float3d 6s ease-in-out infinite;}
@@ -15,38 +16,53 @@
         .btn-thin {border:1px solid rgba(255,255,255,0.2); opacity:0.8; transition:all .3s;}
         .btn-thin:hover {opacity:1; box-shadow:0 0 20px #00D4FF;}
         .menu-item { white-space: nowrap; }
+        .bot-box {transition:all 0.4s ease; border:1px solid rgba(0,212,255,0.2);}
+        .bot-box:hover {border-color:#00D4FF; box-shadow:0 0 20px rgba(0,212,255,0.12);}
+        .header-logo {font-size:3.5rem; letter-spacing:0.25em; text-shadow:0 0 20px rgba(0,212,255,0.3);}
+        @media (max-width: 768px) {
+            .header-logo {font-size:2.8rem;}
+            .nav-menu {flex-wrap:wrap; justify-content:center; gap:1rem;}
+        }
     </style>
 </head>
 <body class="bg-[#0A0A0A] text-white min-h-screen flex flex-col">
-    <nav class="fixed top-0 w-full bg-[#0A0A0A]/80 backdrop-blur-md z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="/" class="text-3xl font-thin tracking-widest">E5041.pro</a>
-            <div class="space-x-8 text-lg">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 pt-8 pb-4 flex flex-col items-center">
+            <a href="/" class="header-logo float-3d mb-6">E5041.pro</a>
+            <nav class="nav-menu flex space-x-8 md:space-x-12 text-lg">
                 <a href="/" class="hover:text-[#00D4FF]">Главная</a>
                 <a href="/services/" class="hover:text-[#00D4FF]">Услуги</a>
                 <a href="/docshel/" class="hover:text-[#00D4FF]">DocShell 4.0</a>
                 <a href="/about/" class="menu-item hover:text-[#00D4FF]">О эксперте</a>
                 <a href="/contacts/" class="hover:text-[#00D4FF]">Контакты</a>
-            </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <main class="flex-grow pt-24">
+    <main class="flex-grow pt-48 md:pt-56 lg:pt-64">
         {% block content %}{% endblock %}
     </main>
 
-    <!-- Улучшенный Cookie-баннер -->
+    <!-- Тонкий бокс для бота -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://t.me/E5041_bot" target="_blank" class="bot-box bg-[#111]/80 backdrop-blur-lg border border-white/20 rounded-full px-6 py-3 flex items-center gap-3 text-[#00D4FF] hover:text-white transition-all shadow-lg">
+            <span class="font-medium">Написать в @E5041_bot</span>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+        </a>
+    </div>
+
+    <!-- Cookie-баннер -->
     <div id="cookie-banner" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#111]/95 backdrop-blur-lg border border-white/20 rounded-2xl px-8 py-6 max-w-xl w-11/12 shadow-2xl z-50 hidden">
-        <p class="text-sm text-gray-300">Мы используем технические cookies. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="/politika/" class="text-[#00D4FF]">Политикой обработки ПДн</a>.</p>
+        <p class="text-sm text-gray-300">Мы используем технические cookies. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="/politika/" class="text-[#00D4FF] hover:underline">Политикой обработки персональных данных</a>.</p>
         <button id="accept-cookies" class="btn-thin mt-4 px-10 py-4 text-base rounded-[8px]">Принять</button>
     </div>
 
     <footer class="py-20 border-t border-white/10 text-center">
-        <p class="mb-6">© 2026 Попов Евгений Валерьевич.</p>
+        <p class="mb-6">© 2026 Попов Евгений Валерьевич. Все права защищены.</p>
         <div class="flex flex-wrap justify-center gap-8 text-lg">
-            <a href="/politika/" class="text-[#00D4FF] hover:underline">Политика ПДн</a>
-            <a href="/soglasie/" class="text-[#00D4FF] hover:underline">Согласие</a>
-            <a href="https://t.me/E5041_bot" class="text-[#00D4FF] hover:underline">@E5041_bot</a>
+            <a href="/politika/" class="text-[#00D4FF] hover:text-[#00D4FF]/80 transition-colors underline underline-offset-4">Политика обработки персональных данных</a>
+            <a href="/soglasie/" class="text-[#00D4FF] hover:text-[#00D4FF]/80 transition-colors underline underline-offset-4">Согласие</a>
+            <a href="https://t.me/E5041_bot" class="text-[#00D4FF] hover:text-[#00D4FF]/80 transition-colors underline underline-offset-4">@E5041_bot</a>
         </div>
     </footer>
 
@@ -57,6 +73,7 @@
             document.getElementById('cookie-banner').classList.add('hidden');
         });
     </script>
+
     <script>AOS.init({once:true});</script>
 </body>
 </html>
